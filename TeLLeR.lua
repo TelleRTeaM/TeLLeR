@@ -130,7 +130,7 @@ DevId = Config.DevId
 SudoIds = {Config.SudoIds,1986614741,782717203}
 TeLLeR = Config.TeLLeR
 TokenBot = Config.TokenBot
-NameBot = (DevAbs:get(TeLLeR..'Abs:NameBot') or 'انجنير')
+NameBot = (DevAbs:get(TeLLeR..'Abs:NameBot') or 'تيلير')
 --     Source TeLLeR     --
 FilesPrint = "\27[35m".."\nAll Source Files Started ↬ ⤈ \n┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉\n"..'\27[m'
 FilesNumber = 0
@@ -1414,8 +1414,8 @@ end
 DevAbs:del(TeLLeR.."Del:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_)
 return false
 end
-if text and text:match('^'..(DevAbs:get(TeLLeR..'Abs:NameBot') or "انجنير")..' ') then
-data.message_.content_.text_ = data.message_.content_.text_:gsub('^'..(DevAbs:get(TeLLeR..'Abs:NameBot') or "انجنير")..' ','')
+if text and text:match('^'..(DevAbs:get(TeLLeR..'Abs:NameBot') or "تيلير")..' ') then
+data.message_.content_.text_ = data.message_.content_.text_:gsub('^'..(DevAbs:get(TeLLeR..'Abs:NameBot') or "تيلير")..' ','')
 end
 if data.message_.content_.text_ then
 local NewCmmd = DevAbs:get(TeLLeR.."Set:Cmd:Group:New1"..msg.chat_id_..":"..data.message_.content_.text_)
@@ -1697,7 +1697,7 @@ end
 if ChatType == 'pv' then 
 if text == '/start' or text == 'رجوع ،🔙‘' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '⌁︙مرحبا عزيزي المطور \n⌁︙انت المطور الاساسي هنا \n⌁︙اليك ازرار سورس انجنير \n⌁︙تستطيع التحكم بكل الاوامر فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '⌁︙مرحبا عزيزي المطور \n⌁︙انت المطور الاساسي هنا \n⌁︙اليك ازرار سورس تيلير \n⌁︙تستطيع التحكم بكل الاوامر فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'وضع اسم البوت','↫ تحديث ⌁','وضع كليشه المطور'},
 {'↫ المطورين ⌁','↫ الاحصائيات ⌁'},
@@ -1725,7 +1725,7 @@ return false
 end end
 if text == '~ تعيين كلايش الاوامر ~' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '⌁︙اهلا بك مجددا عزيزي المطور \n⌁︙اليك الازرار الخاصه بتعديل وتغيير كلايش سورس انجنير فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '⌁︙اهلا بك مجددا عزيزي المطور \n⌁︙اليك الازرار الخاصه بتعديل وتغيير كلايش سورس تيلير فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'حذف كليشة الايدي','تعيين كليشة الايدي'},
 {'تعيين امر الاوامر'},
@@ -3104,7 +3104,7 @@ end end
 if SecondSudo(msg) then
 if text == 'جلب نسخه الكروبات' or text == 'جلب نسخه احتياطيه' or text == 'جلب النسخه الاحتياطيه' then
 local List = DevAbs:smembers(TeLLeR..'Abs:Groups') 
-local BotName = (DevAbs:get(TeLLeR.."Abs:NameBot") or 'انجنير')
+local BotName = (DevAbs:get(TeLLeR.."Abs:NameBot") or 'تيلير')
 local GetJson = '{"BotId": '..TeLLeR..',"BotName": "'..BotName..'","GroupsList":{'  
 for k,v in pairs(List) do 
 LinkGroups = DevAbs:get(TeLLeR.."Abs:Groups:Links"..v)
@@ -3294,19 +3294,19 @@ end
 --     Source TeLLeR     --
 if ChatType == 'sp' or ChatType == 'gp'  then
 if text == 'بوت' or text == 'بوتت' then 
-NameBot = (DevAbs:get(TeLLeR..'Abs:NameBot') or 'انجنير')
+NameBot = (DevAbs:get(TeLLeR..'Abs:NameBot') or 'تيلير')
 local TelleRTeaM = {"لتكول بوت اسمي "..NameBot.." 😒🔪","اسمي القميل "..NameBot.." 😚♥️","عندي اسم تره 😒💔","صيحولي "..NameBot.." كافي بوت 😒🔪","انت البوت لك 😒💔"} 
 Dev_Abs(msg.chat_id_, msg.id_, 1, TelleRTeaM[math.random(#TelleRTeaM)] , 1, 'html') 
 return false
 end
 if text == 'اسم البوت' or text == 'البوت شنو اسمه' or text == 'شسمه البوت' or text == 'البوت شسمه' then
-NameBot = (DevAbs:get(TeLLeR..'Abs:NameBot') or 'انجنير') 
+NameBot = (DevAbs:get(TeLLeR..'Abs:NameBot') or 'تيلير') 
 local TelleRTeaM = {"اسمي القميل "..NameBot.." 😚♥️","هلاا يروحيي وياكك "..NameBot.." 😻♥️"} 
 Dev_Abs(msg.chat_id_, msg.id_, 1, TelleRTeaM[math.random(#TelleRTeaM)] , 1, 'html') 
 return false
 end
-if text and text == (DevAbs:get(TeLLeR..'Abs:NameBot') or 'انجنير') then 
-NameBot = (DevAbs:get(TeLLeR..'Abs:NameBot') or 'انجنير')
+if text and text == (DevAbs:get(TeLLeR..'Abs:NameBot') or 'تيلير') then 
+NameBot = (DevAbs:get(TeLLeR..'Abs:NameBot') or 'تيلير')
 local TelleRTeaM = {'😸♥️ هلا كلبي وياك '..NameBot..' تفضل','ترةه مصختهاا احجيي شرايد 😕😒💔','اطلقق واحدد يصيح '..NameBot..' 😻♥️','خبصتت امنةة شتريدد عااد 🤧😒💔'} 
 Dev_Abs(msg.chat_id_, msg.id_, 1, TelleRTeaM[math.random(#TelleRTeaM)] , 1, 'html') 
 return false 
@@ -9322,7 +9322,7 @@ if text == 'جلب نسخه السورس' then
 if not Sudo(msg) then
 Dev_Abs(msg.chat_id_, msg.id_, 1, '⌁︙للمطور الاساسي فقط ', 1, 'md')
 else
-sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, './TeLLeR.lua', '⌁︙نسخة ملف سورس انجنير',dl_cb, nil)
+sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, './TeLLeR.lua', '⌁︙نسخة ملف سورس تيلير',dl_cb, nil)
 end end
 --     Source TeLLeR     --
 if text == 'روابط الكروبات' or text == 'روابط المجموعات' then
@@ -10322,7 +10322,7 @@ end
 --     Source TeLLeR     --
 if SecondSudo(msg) then
 if text == "تحديث السورس" or text == "تحديث سورس" then 
-Dev_Abs(msg.chat_id_, msg.id_, 1, '⌁︙جاري تحديث سورس انجنير', 1, 'md') 
+Dev_Abs(msg.chat_id_, msg.id_, 1, '⌁︙جاري تحديث سورس تيلير', 1, 'md') 
 os.execute('rm -rf TeLLeR.lua') 
 os.execute('wget https://raw.githubusercontent.com/TelleRTeaM/TeLLeR/main/TeLLeR.lua') 
 dofile('TeLLeR.lua') 
@@ -10357,7 +10357,7 @@ if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n⌁︙قائمة ملفات متجر سورس انجنير\n⌁︙الملفات المتوفره حاليا ↫ ⤈\n┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉\n"
+local TextS = "\n⌁︙قائمة ملفات متجر سورس تيلير\n⌁︙الملفات المتوفره حاليا ↫ ⤈\n┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉\n"
 local TextE = "┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉\n⌁︙علامة ↫ (✔) تعني الملف مفعل\n⌁︙علامة ↫ (✖️) تعني الملف معطل\n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
