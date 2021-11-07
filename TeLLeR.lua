@@ -4163,7 +4163,7 @@ Welcome To Source
 ⌁︙[TeLLeR TEAM](https://t.me/TELLER20)
 ]]
 keyboard = {} 
-keyboard.inline_keyboard = {{{text = '✯ Source Channel',url="https://t.me/TELLER20"}},{{text = '✯ Developer',url="t.me/l_I10"},{text = '✯ Tws WaTaN',url="https://t.me/TeLler2BoT"}},{{text= '✯ Exp Source .',url="https://t.me/TELLER200"}}}
+keyboard.inline_keyboard = {{{text = '✯ Source Channel',url="https://t.me/TELLER20"}},{{text = '✯ Developer',url="t.me/l_I10"},{text = '✯ Tws TeLLeR',url="https://t.me/TeLler2BoT"}},{{text= '✯ Exp Source .',url="https://t.me/TELLER200"}}}
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/TELLER20&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
@@ -6330,7 +6330,7 @@ tdcli_function ({ID="GetUserProfilePhotos",user_id_=Manager_id,offset_=0,limit_=
 if getpro.photos_[0] then
 Text = "*✯︙Owner Name ↬ * ["..dp.first_name_.."](T.me/"..dp.username_..")\n*✯︙Owner User ↬* [@"..dp.username_.."]\n*✯︙Owner id ↬* ["..dp.id_.."](T.me/"..dp.username_..")"
 keyboard = {} 
-keyboard.inline_keyboard = {{{text=''..dp.first_name_..'',url="t.me/"..dp.username_ or WaTaNTeaM}}}
+keyboard.inline_keyboard = {{{text=''..dp.first_name_..'',url="t.me/"..dp.username_ or TeLLeRTeaM}}}
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id='..msg.chat_id_..'&caption='..URL.escape(Text)..'&photo='..getpro.photos_[0].sizes_[1].photo_.persistent_id_..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 else
