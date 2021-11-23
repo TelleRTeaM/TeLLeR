@@ -4157,13 +4157,13 @@ DevAbs:set(TeLLeR..'Abs:viewget'..msg.sender_user_id_,true)
 Dev_Abs(msg.chat_id_, msg.id_, 1, '⌁︙حسنا قم باعادة توجيه للمنشور الذي تريدني حساب مشاهداته', 1, 'md')
 end
 --     Source TeLLeR     --
-if text == "سورس" and ChCheck(msg) or text == "السورس" and ChCheck(msg) or text == "يا سورس" and ChCheck(msg) or text == "ياسورس" and ChCheck(msg) or text == "↫  السورس ✯" and ChCheck(msg) then
+if text == "سورس" and ChCheck(msg) or text == "السورس" and ChCheck(msg) or text == "يا سورس" and ChCheck(msg) or text == "ياسورس" and ChCheck(msg) or text == "↫  السورس ⌁" and ChCheck(msg) then
 Text = [[
 Welcome To Source
 ⌁︙[TeLLeR TEAM](https://t.me/TELLER20)
 ]]
 keyboard = {} 
-keyboard.inline_keyboard = {{{text = '✯ Source Channel',url="https://t.me/TELLER20"}},{{text = '✯ Developer',url="t.me/l_I10"},{text = '✯ Tws TeLLeR',url="https://t.me/TeLler2BoT"}},{{text= '✯ Exp Source .',url="https://t.me/TELLER200"}}}
+keyboard.inline_keyboard = {{{text = '⌁ Source Channel',url="https://t.me/TELLER20"}},{{text = '⌁ Developer',url="t.me/l_I10"},{text = '⌁ Tws TeLLeR',url="https://t.me/TeLler2BoT"}},{{text= '⌁ Exp Source .',url="https://t.me/TELLER200"}}}
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/TELLER20&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
@@ -4311,14 +4311,23 @@ if text == "ايدي المجموعه" and ChCheck(msg) then Dev_Abs(msg.chat_id
 if text == 'مسح سحكاتي' or text == 'مسح تعديلاتي' or text == 'حذف سحكاتي' or text == 'حذف تعديلاتي' then DevAbs:del(TeLLeR..'Abs:EditMsg'..msg.chat_id_..msg.sender_user_id_) Dev_Abs(msg.chat_id_, msg.id_, 1, '⌁︙تم حذف جميع تعديلاتك بنجاح' , 1, 'md') end
 if text == 'مسح جهاتي' or text == 'مسح اضافاتي' or text == 'حذف جهاتي' or text == 'حذف اضافاتي' then DevAbs:del(TeLLeR..'Abs:ContactNumber'..msg.chat_id_..':'..msg.sender_user_id_) Dev_Abs(msg.chat_id_, msg.id_, 1, '⌁︙تم حذف جميع جهاتك المضافه' , 1, 'md') end
 --     Source TeLLeR     --
-if text == 'المطور' or text == 'مطور' then
+if text == "المطور" or text == "مطور" or text == "↫ المطور ⌁" then
+local DevText = DevAbs:get(WaTaN2.."DevText")
+if DevText then
+Dev_Abs(msg.chat_id_, msg.id_,DevText)
+else
 tdcli_function({ID="GetUser",user_id_=DevId},function(arg,result)
+tdcli_function({ID = "GetUserProfilePhotos",user_id_=DevId,offset_=0,limit_ = 1},function(arg,getpro) 
+if getpro.photos_[0] then
+Text = "*⌁︙Dev Name ↬ * ["..result.first_name_.."](t.me/"..result.username_..")\n*⌁︙Dev User ↬* [@"..result.username_.."]"
+keyboard = {}
+keyboard.inline_keyboard = {{{text=''..result.first_name_..'',url="https://t.me/"..result.username_..""}}}
 local msg_id = msg.id_/2097152/0.5
-Text = "*᥀︙Dev Name ↬ * ["..result.first_name_.."](T.me/"..result.username_..")\n*᥀︙Dev User ↬* [@"..result.username_.."]"
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = ''..result.first_name_..' ',url="t.me/"..result.username_ or tt3at}}}
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/'..result.username_..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end,nil)
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id='..msg.chat_id_..'&caption='..URL.escape(Text)..'&photo='..getpro.photos_[0].sizes_[1].photo_.persistent_id_..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+end,nil)   
+end,nil)   
+end
 end
 --     Source TeLLeR     --
 if text and text:match('^هينه @(.*)') and ChCheck(msg) or text and text:match('^هينها @(.*)') then 
@@ -6323,12 +6332,12 @@ if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
 Manager_id = admins[i].user_id_
 tdcli_function ({ID = "GetUser",user_id_ = Manager_id},function(arg,dp) 
 if dp.first_name_ == false then
-Dev_Abs(msg.chat_id_, msg.id_, 1, "✯︙حساب المنشئ محذوف", 1, "md")
+Dev_Abs(msg.chat_id_, msg.id_, 1, "⌁︙حساب المنشئ محذوف", 1, "md")
 return false  
 end
 tdcli_function ({ID="GetUserProfilePhotos",user_id_=Manager_id,offset_=0,limit_=1},function(arg,getpro) 
 if getpro.photos_[0] then
-Text = "*✯︙Owner Name ↬ * ["..dp.first_name_.."](T.me/"..dp.username_..")\n*✯︙Owner User ↬* [@"..dp.username_.."]\n*✯︙Owner id ↬* ["..dp.id_.."](T.me/"..dp.username_..")"
+Text = "*⌁︙Owner Name ↬ * ["..dp.first_name_.."](T.me/"..dp.username_..")\n*⌁︙Owner User ↬* [@"..dp.username_.."]\n*⌁︙Owner id ↬* ["..dp.id_.."](T.me/"..dp.username_..")"
 keyboard = {} 
 keyboard.inline_keyboard = {{{text=''..dp.first_name_..'',url="t.me/"..dp.username_ or TeLLeRTeaM}}}
 local msg_id = msg.id_/2097152/0.5
@@ -8210,7 +8219,7 @@ if result.members_[i].status_.ID == "ChatMemberStatusMember" then
 ab = ''
 elseif result.members_[i].status_.ID == "ChatMemberStatusEditor" then  
 t = t + 1
-ab = ' ✯'
+ab = ' ⌁'
 end
 text = text.."~ [@"..data.username_..']'..ab.."\n"
 if #admins == 0 then
@@ -8218,7 +8227,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1, "⌁︙*لاتوجد بوتات هنا*", 1, '
 return false end
 if #admins == i then 
 local a = '┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉\n⌁︙*عدد البوتات هنا* ↫ '..n..'\n'
-local f = '⌁︙*عدد البوتات المرفوعه* ↫ '..t..'\n⌁︙*ملاحضه علامة الـ*✯ *تعني ان البوت ادمن في هذه المجموعه*'
+local f = '⌁︙*عدد البوتات المرفوعه* ↫ '..t..'\n⌁︙*ملاحضه علامة الـ*⌁ *تعني ان البوت ادمن في هذه المجموعه*'
 Dev_Abs(msg.chat_id_, msg.id_, 1, text..a..f, 1, 'md')
 end
 end,nil)
