@@ -4312,7 +4312,7 @@ if text == 'مسح سحكاتي' or text == 'مسح تعديلاتي' or text ==
 if text == 'مسح جهاتي' or text == 'مسح اضافاتي' or text == 'حذف جهاتي' or text == 'حذف اضافاتي' then DevAbs:del(TeLLeR..'Abs:ContactNumber'..msg.chat_id_..':'..msg.sender_user_id_) Dev_Abs(msg.chat_id_, msg.id_, 1, '⌁︙تم حذف جميع جهاتك المضافه' , 1, 'md') end
 --     Source TeLLeR     --
 if text == "المطور" or text == "مطور" or text == "↫ المطور ⌁" then
-local DevText = DevAbs:get(WaTaN2.."DevText")
+local DevText = DevAbs:get(TeLLeR.."DevText")
 if DevText then
 Dev_Abs(msg.chat_id_, msg.id_,DevText)
 else
